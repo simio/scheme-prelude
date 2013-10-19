@@ -1,0 +1,9 @@
+*.swp
+*.core
+*.exe
+*.so
+*.import.scm
+
+# Bad gnu!
+*~
+[#]*[#]
