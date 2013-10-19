@@ -163,8 +163,8 @@
 (define (string-downcase/swedish str) (string-map char-downcase/swedish str))
 
 (define (char-unswedish char)
-  (let find ((needles (string->list "ÅÄÖÉÜåäöéü"))
-             (replacements (string->list "AAOEUEaaoeu")))
+  (let find ((needles (string->list      "ÅÄÖÉÜåäöéü"))
+             (replacements (string->list "AAOEUaaoeu")))
     (cond
      ((null? needles) char)
      ((char=? (car needles) char) (car replacements))
