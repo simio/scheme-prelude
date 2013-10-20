@@ -126,8 +126,8 @@
                                     (cdr overlay)))
                              (else
                               (loop (atree-update base
-                                                  (atree-merge (atree-ref base (caar overlay))
-                                                               (cdar overlay))
+                                                  (loop (atree-ref base (caar overlay))
+                                                        (cdar overlay))
                                                   (caar overlay))
                                     (cdr overlay))))))))
     (lambda trees
