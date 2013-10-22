@@ -116,20 +116,20 @@
 ;;; the base tree, for each iteration.
 (define atree-merge
   (let ((merge-two (lambda (base overlay)
-                     (cond ((null? overlay) base)
-                           ((not (pair? (car overlay))) #f)
-                           ((or (atom? (cdar overlay))
-                                (atom? (atree-ref base (caar overlay))))   ; #f if not found
-                            (atree-merge
-                             (atree-update base (cdar overlay) (caar overlay))
-                             (cdr overlay)))
-                           (else
-                            (atree-merge
-                             (atree-update base
-                                           (atree-merge (atree-ref base (caar overlay))
+                     (let loop ((base base)
+                                (overlay overlay))
+                       (cond ((null? overlay) base)
+                             ((not (pair? (car overlay))) #f)
+                             ((or (atom? (cdar overlay))
+                                  (atom? (atree-ref base (caar overlay))))   ; #f if not found
+                              (loop (atree-update base (cdar overlay) (caar overlay))
+                                    (cdr overlay)))
+                             (else
+                              (loop (atree-update base
+                                                  (loop (atree-ref base (caar overlay))
                                                         (cdar overlay))
-                                           (caar overlay))
-                             (cdr overlay)))))))
+                                                  (caar overlay))
+                                    (cdr overlay))))))))
     (lambda trees
       (fold merge-two '() trees))))
 
