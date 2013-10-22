@@ -13,7 +13,7 @@
 ;; OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 (module prelude *
-(import scheme chicken srfi-1 srfi-13 data-structures stdinerr extras)
+(import scheme chicken srfi-1 srfi-13 data-structures stdouterr extras)
 
 ;;; Get cdr of PAIR, or eval to #f if it's not a pair (CDr If Pair)
 (define-syntax cdip

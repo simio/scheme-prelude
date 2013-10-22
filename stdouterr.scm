@@ -12,7 +12,7 @@
 ;;; ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 ;;; OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-(module stdinerr *
+(module stdouterr *
 (import scheme chicken data-structures srfi-1 extras)
 
 (define print-debug-messages?
