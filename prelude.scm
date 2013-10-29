@@ -12,6 +12,8 @@
 ;; ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 ;; OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
+(use srfi-1 srfi-13)
+
 (module prelude *
 (import scheme chicken srfi-1 srfi-13 data-structures stdouterr extras)
 

@@ -12,6 +12,8 @@
 ;;; ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 ;;; OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
+(use srfi-1)
+
 ;; As long as most of the procedures intended for export is syntax rewriting
 ;; into calls for talk-is-cheap (which isn't meant to be exported), all
 ;; defined syntax and procedures might just as well be exported.
