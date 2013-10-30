@@ -313,4 +313,11 @@
        (lambda ()
          body ...)))))
 
+(define (filter-duplicates lst #!optional (equal? equal?))
+  (let loop ((rest lst)
+             (result '()))
+    (cond ((null? rest) (reverse result))
+          ((member (car rest) result equal?) (loop (cdr rest) result))
+          (else (loop (cdr rest) (cons (car rest) result))))))
+
 )
