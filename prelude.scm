@@ -112,10 +112,12 @@
                        equal?))))
 
 ;;; UNTESTED Deep merge of atrees.
-;;; Overlays the second supplied atree on top of the first, the third on top
-;;; the resulting atree, and so on.
-;;; Values from the overlay tree will replace any values already present in
-;;; the base tree, for each iteration.
+;;;
+;;; Overlays the first supplied atree on top of the second, then
+;;; overlays the resulting tree on top of the third, and so on.
+;;;
+;;; To do a right fold, where the right-most tree has priority instead
+;;; of the left-most, just reverse the arguments before applying.
 (define atree-merge
   (let ((merge-two (lambda (base overlay)
                      (let loop ((base base)
